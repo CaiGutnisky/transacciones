@@ -1,7 +1,5 @@
 package cuentas;
 
-import java.util.Scanner;
-
 public class Cuenta{
 
     public int numeroCuenta;

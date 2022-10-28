@@ -1,7 +1,5 @@
 package cuentas;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Cliente {
@@ -9,15 +7,15 @@ public class Cliente {
     private String nombre;
     private String apellido;
     private String dni;
-    static List<Cuenta> cuentas = new ArrayList<Cuenta>();
+    private Cuenta cuenta;
 
     static Scanner sc = new Scanner(System.in);
 
-    public Cliente(String nombre, String apellido, String dni, List<Cuenta> cuentas) {
+    public Cliente(String nombre, String apellido, String dni, Cuenta cuenta) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.cuentas = (cuentas);
+        this.cuenta = cuenta;
     }
 
     public void setNombre(String nombre) {
@@ -45,17 +43,17 @@ public class Cliente {
     }
 
     //retorno el saldo de la cuenta
-    public double consultarSaldo(int indice){
-        return cuentas.get(indice).getSaldo();
+    public double consultarSaldo(){
+        return cuenta.getSaldo();
     }
 
     //Creamos el metodo para ingresar dinero
-    public void ingresarDinero(int indice,double cantidad){
-        cuentas.get(indice).depositarDinero(cantidad);
+    public void ingresarDinero(double cantidad){
+        cuenta.depositarDinero(cantidad);
     }
 
     //Creamos el metodo para retirar dinero
-    public void retirarDinero(int indice,double cantidad){
-        cuentas.get(indice). retirarDinero(cantidad);
+    public void retirarDinero(double cantidad){
+        cuenta.retirarDinero(cantidad);
     }
 }
